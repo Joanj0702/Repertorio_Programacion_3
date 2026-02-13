@@ -1,0 +1,147 @@
+
+/*  Caso 1 :
+
+Identidad visual con variables CSS (1%)
+Una página web institucional busca estandarizar su identidad visual para facilitar cambios futuros en el diseño.
+Requerimientos
+•	Definir una variable CSS llamada --primary-color con un color azul oscuro.
+•	Aplicar esa variable al color del título principal.
+•	Tipografía Arial con fallback a sans-serif.
+•	Texto centrado.
+•	Tamaño de fuente 1.5rem.
+
+Escriba las reglas CSS necesarias para:
+1.	Definir la variable en :root.
+2.	Aplicar los estilos al elemento <h1> usando dicha variable. */
+
+:root {
+  --primary-color: #003366;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Caso 2 
+Legibilidad avanzada y tipografía fluida (1%)
+Un sitio web educativo desea mejorar la experiencia de lectura en diferentes tamaños de pantalla.
+Requerimientos
+•	Color del texto gris oscuro.
+•	Tamaño de fuente fluido usando clamp() entre 15px y 18px.
+•	Texto justificado.
+•	Altura de línea de 1.6.
+•	Limitar el ancho del texto a un máximo de 70 caracteres por línea.
+
+Escriba la regla CSS completa que aplique estos estilos a todos los párrafos (<p>). */
+
+p {
+  color: #333;
+  font-size: clamp(15px, 2.5vw, 18px);
+  text-align: justify;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+/* Caso 3 
+Sección informativa con Flexbox (1%)
+Se desea crear una sección informativa destacada representada por un contenedor con la clase .info.
+Requerimientos
+•	Fondo color #e6f2ff.
+•	Texto color #003366.
+•	Tipografía Verdana.
+•	Tamaño de fuente 15px.
+•	Usar Flexbox para organizar el contenido en columna.
+•	Separación interna de 16px.
+•	Bordes redondeados de 8px.
+
+Escriba la regla CSS completa para la clase .info que cumpla con los requerimientos anteriores. */
+
+.info {
+  background-color: #e6f2ff;
+  color: #003366;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* Caso 4 
+Botón interactivo con pseudo-clases (1%)
+Se necesita diseñar un botón accesible e interactivo.
+Requerimientos
+•	Fondo verde.
+•	Texto blanco.
+•	Tamaño de fuente 14px.
+•	Sin subrayado.
+•	Cambiar el color de fondo a verde oscuro al pasar el mouse (:hover).
+•	Mostrar un contorno visible al recibir foco (:focus).
+
+Escriba las reglas CSS necesarias para el elemento <button> incluyendo los estados interactivos. */ 
+
+button {
+  background-color: green;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: darkgreen;
+}
+
+button:focus {
+  outline: 3px solid #004d00;
+  outline-offset: 2px;
+}
+
+/* Caso 5 
+Diseño de tarjeta con Grid (1%)
+Un sitio web moderno utiliza tarjetas informativas para mostrar contenido.
+Requerimientos
+•	Contenedor con la clase .card.
+•	Usar CSS Grid con dos filas: encabezado y contenido.
+•	Sombra suave.
+•	Fondo blanco.
+•	Ancho máximo de 300px.
+•	Espaciado interno de 16px.
+
+Escriba la regla CSS completa para la clase .card. */
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+/* Caso 6 
+Responsive Design con Media Queries (1%)
+Una sección debe adaptarse a dispositivos móviles.
+Requerimientos
+•	En pantallas mayores a 768px, el texto debe mostrarse en dos columnas.
+•	En pantallas menores o iguales a 768px, el texto debe mostrarse en una sola columna.
+•	Aplicar el estilo a un contenedor con la clase .content.
+
+Escriba las reglas CSS necesarias utilizando media queries. */
+
+.content {
+  column-count: 1;
+}
+
+@media (min-width: 769px) {
+  .content {
+    column-count: 2;
+  }
+}
